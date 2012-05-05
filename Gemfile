@@ -1,5 +1,7 @@
 source "http://rubygems.org"
 
+gem "mongo"
+
 git 'git://github.com/yuya-takeyama/markovchain.git' do
   gem "markovchain", "~> 0.1.0"
 end
