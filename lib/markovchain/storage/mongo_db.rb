@@ -8,7 +8,7 @@ class Markovchain
       def tokens_after(sequence)
         records = @collection.find({'sequence' => sequence})
         if records and records.count > 0
-          Hash[*records.map{|r| [r['token'], r['count']] }.flatten]
+          Hash[*records.map{|r| [r['token'], r['count'].to_i] }.flatten]
         else
           {}
         end
