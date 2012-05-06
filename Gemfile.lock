@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/yuya-takeyama/markovchain.git
-  revision: 75232e9b96b748769ecf0b7c9d3977a7ef5b5777
+  revision: bfcf31c9a5f94dd06f3925f3ecbcbcfb2655dc5a
   specs:
-    markovchain (0.1.0)
+    markovchain (0.2.0)
 
 GEM
   remote: http://rubygems.org/
@@ -54,7 +54,7 @@ DEPENDENCIES
   bundler (~> 1.1.0)
   guard-rspec
   jeweler (~> 1.8.3)
-  markovchain (~> 0.1.0)!
+  markovchain (~> 0.2.0)!
   mongo
   rb-readline
   rdoc (~> 3.12)
