@@ -45,6 +45,14 @@ module Markovchain::Storage
         end
         it { should == {'a' => 3, 'b' => 2, 'c' => 1} }
       end
+
+      context 'sequence contains . (dot) specified' do
+        let(:sequence) { 'f.o' }
+        before do
+          storage.increment(sequence, 'a')
+        end
+        it { should == {'a' => 1} }
+      end
     end
   end
 end
