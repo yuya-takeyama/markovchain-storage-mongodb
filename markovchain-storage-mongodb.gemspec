@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
     "VERSION",
     "lib/markovchain-storage-mongodb.rb",
     "lib/markovchain/storage/mongo_db.rb",
-    "spec/lib/markovchain/storage/mongodb_spec.rb",
+    "spec/lib/markovchain/storage/mongo_db_spec.rb",
     "spec/spec_helper.rb"
   ]
   s.homepage = "http://github.com/yuya-takeyama/markovchain-storage-mongodb"
