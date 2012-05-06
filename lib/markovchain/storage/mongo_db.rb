@@ -6,9 +6,9 @@ class Markovchain
       end
 
       def tokens_after(sequence)
-        record = @collection.find_one({'sequence' => sequence})
-        if record and record['tokens']
-          record['tokens']
+        records = @collection.find({'sequence' => sequence})
+        if records and records.count > 0
+          Hash[*records.map{|r| [r['token'], r['count']] }.flatten]
         else
           {}
         end
@@ -16,8 +16,8 @@ class Markovchain
 
       def increment(prev_sequence, token)
         @collection.update(
-          {"sequence" => prev_sequence},
-          {"$inc" => {"tokens.#{token}" => 1}},
+          {"sequence" => prev_sequence, "token" => token},
+          {"$inc" => {"count" => 1}},
           {:upsert => true}
         )
       end

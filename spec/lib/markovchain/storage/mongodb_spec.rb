@@ -53,6 +53,14 @@ module Markovchain::Storage
         end
         it { should == {'a' => 1} }
       end
+
+      context 'token is a . (dot)' do
+        let(:token) { '.' }
+        before do
+          storage.increment(sequence, token)
+        end
+        it { should == {token => 1} }
+      end
     end
   end
 end
