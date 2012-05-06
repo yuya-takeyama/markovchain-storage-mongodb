@@ -9,6 +9,9 @@ end
 group :development do
   gem "rspec", "~> 2.8.0"
   gem "guard-rspec"
+  platform :ruby do
+    gem "rb-readline"
+  end
   gem "yard", "~> 0.7"
   gem "rdoc", "~> 3.12"
   gem "bundler", "~> 1.1.0"
