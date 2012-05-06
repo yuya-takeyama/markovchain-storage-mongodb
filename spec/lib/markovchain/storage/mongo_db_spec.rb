@@ -1,3 +1,4 @@
+require 'markovchain'
 require 'markovchain-storage-mongodb'
 require 'mongo'
 
@@ -61,6 +62,13 @@ module Markovchain::Storage
         end
         it { should == {token => 1} }
       end
+    end
+
+    context 'integrated with Markovchain' do
+      let(:mc) { Markovchain.new(:storage => storage, :state_size => 2) }
+      before { 100.times { mc.seed('abcdefg') } }
+      subject { mc.random_sequence }
+      it { should == 'abcdefg' }
     end
   end
 end
